@@ -4,7 +4,7 @@ class Member < ActiveRecord::Base
   has_many :members_roles
   has_many :roles, :through => :members_roles
 
-  attr_accessible :fornavn, :etternavn, :mail
+  attr_accessible :fornavn, :etternavn, :mail, :telefon
 
   if Rails.env == "production"
     establish_connection "mdb2_production"
