@@ -76,9 +76,9 @@ namespace :samfundet_auth_engine do
         end
       end
 
-      Member.all.each do |member|
+      members.each do |member|
         tasks << Proc.new do
-          member.roles << lim_web_role
+          Member.find_by_mail(member[:mail]).roles << lim_web_role
         end
       end
 
