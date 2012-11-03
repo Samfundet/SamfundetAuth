@@ -6,6 +6,8 @@ class Member < ActiveRecord::Base
 
   attr_accessible :fornavn, :etternavn, :mail, :telefon
 
+  validates_presence_of :fornavn, :etternavn, :mail, :telefon, :passord
+
   if Rails.env == "production"
     establish_connection "mdb2_production"
     set_table_name "lim_medlemsinfo"
