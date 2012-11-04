@@ -4,6 +4,11 @@ This project rocks and uses MIT-LICENSE.
 
 ## Installation
 
+SamfundetAuth depens upon SamfundetDomain. However, neither of these gems has been published on eg.
+rubygems.org. Gem does not support fetching gems from Github repositories. This is a feature of the
+Bundler. This is why we need to specify both of the gems, as if one did not depend upon the other,
+even though it does.
+
 Add the following lines to your Gemfile and run `bundle install` again.
 
 ```ruby
