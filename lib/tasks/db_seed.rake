@@ -73,7 +73,7 @@ namespace :samfundet_auth_engine do
 
       members.each do |member|
         tasks << Proc.new do
-          Member.create! member.merge({:passord => "passord"})
+          Member.create! member.merge({:passord => "passord", :telefon => "22222222"})
         end
       end
 
