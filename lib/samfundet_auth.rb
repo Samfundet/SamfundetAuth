@@ -22,6 +22,10 @@ module SamfundetAuth
         if config.member_database
           Member.establish_connection database_config[config.member_database.to_s]
         end
+
+        if config.member_table
+          Member.set_table_name database_config[config.member_table.to_s]
+        end
       end
     end
   end
