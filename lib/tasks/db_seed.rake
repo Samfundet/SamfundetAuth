@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-desc "Load the seed data from SamfundetAuth\"s db/seeds.rb"
+desc "Load the seed data from SamfundetAuth's db/seeds.rb"
 namespace :samfundet_auth_engine do
   namespace :db do
     task :seed => :environment do
