@@ -24,7 +24,7 @@ module SamfundetAuth
         end
 
         if config.member_table
-          Member.set_table_name config.member_table.to_s
+          Member.table_name = config.member_table.to_s
         end
       end
     end
