@@ -4,13 +4,10 @@ class Member < ActiveRecord::Base
   has_many :members_roles
   has_many :roles, :through => :members_roles
 
-  attr_accessible :fornavn, :etternavn, :mail, :telefon
+  attr_accessor :passord
+  attr_accessible :fornavn, :etternavn, :mail, :telefon, :passord
 
   validates_presence_of :fornavn, :etternavn, :mail, :telefon, :passord
-
-  unless Rails.env == "production"
-    attr_accessible :passord
-  end
 
   def firstname
     fornavn
