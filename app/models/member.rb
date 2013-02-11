@@ -4,7 +4,6 @@ class Member < ActiveRecord::Base
   has_many :members_roles
   has_many :roles, :through => :members_roles
 
-  attr_accessor :passord
   attr_accessible :fornavn, :etternavn, :mail, :telefon, :passord
 
   validates_presence_of :fornavn, :etternavn, :mail, :telefon, :passord
