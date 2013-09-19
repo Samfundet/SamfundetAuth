@@ -69,6 +69,11 @@ namespace :samfundet_auth_engine do
           { :fornavn => "Rune",       :etternavn => "Holmgren",   :mail => "Raane.Holm@gmail.com"        },
           { :fornavn => "Morten",     :etternavn => "Lysgaard",   :mail => "morten@lysgaard.no"          },
           { :fornavn => "Dagrun",     :etternavn => "Haugland",   :mail => "dagrunh@gmail.com"           },
+          { :fornavn => "Christoffer",:etternavn => "Tønnessen",  :mail => "chrto@samfundet.no"          },
+          { :fornavn => "Trygve",     :etternavn => "Bærland",    :mail => "trygve.baerland@gmail.com"   },
+          { :fornavn => "Odd",        :etternavn => "Trondrud",   :mail => "odd@gmali.com"               },
+          { :fornavn => "Asbjørn",    :etternavn => "Steinskog",  :mail => "asbjorn@steinskog.me"        },
+          { :fornavn => "Simon",      :etternavn => "Randby",     :mail => "simon@samfundet.no"          },
       ]
 
       members.each do |member|
