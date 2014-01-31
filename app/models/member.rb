@@ -1,7 +1,7 @@
 class Member < ActiveRecord::Base
   self.primary_key = :medlem_id
 
-  has_many :members_roles
+  has_many :members_roles, :dependent => :destroy
   has_many :roles, :through => :members_roles
 
   if Rails.env == 'production'

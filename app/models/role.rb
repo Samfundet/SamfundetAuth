@@ -8,7 +8,7 @@ class Role < ActiveRecord::Base
 
   default_scope :order => "title"
 
-  has_many :members_roles
+  has_many :members_roles, :dependent => :destroy
   has_many :members, :through => :members_roles
   has_many :roles
   belongs_to :group
