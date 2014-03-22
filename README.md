@@ -23,7 +23,7 @@ Copy the migrations to your project with the following commands.
 
 ```bash
 rake samfundet_domain_engine:install:migrations
-rake samfundet_auth_engine:install:migrations
+rake samfundet_auth:install:migrations
 ```
 
 Run `rake db:migrate` to execute the newly created migrations.
@@ -43,7 +43,7 @@ Run the following commands to update the gem.
 bundle update --source samfundet_domain
 bundle update --source samfundet_auth
 rake samfundet_domain_engine:install:migrations
-rake samfundet_auth_engine:install:migrations
+rake samfundet_auth:install:migrations
 ```
 
 Run `rake db:migrate` again to execute any newly created migrations.
