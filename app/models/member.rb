@@ -4,9 +4,7 @@ class Member < ActiveRecord::Base
   has_many :members_roles, :dependent => :destroy
   has_many :roles, :through => :members_roles
 
-  if Rails.env == 'production'
-    attr_accessor :passord
-  end
+  attr_accessor :passord if %w(production staging).include? Rails.env
 
   attr_accessible :fornavn, :etternavn, :mail, :telefon, :passord
 
@@ -37,7 +35,7 @@ class Member < ActiveRecord::Base
   end
 
   def self.authenticate(member_id_or_email, password)
-    if Rails.env == "production"
+    if %w(production staging).include? Rails.env
       authenticate_production member_id_or_email, password
     else
       authenticate_development member_id_or_email, password
