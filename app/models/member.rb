@@ -6,9 +6,14 @@ class Member < ActiveRecord::Base
 
   attr_accessor :passord if %w(production staging).include? Rails.env
 
-  attr_accessible :fornavn, :etternavn, :mail, :telefon, :passord
+  attr_accessible :fornavn, :etternavn, :mail, :telefon
 
-  validates_presence_of :fornavn, :etternavn, :mail, :telefon, :passord
+  validates_presence_of :fornavn, :etternavn, :mail, :telefon
+
+  if Rails.env.development?
+    attr_accessible :passord
+    validates_presence_of :passord
+  end
 
   def firstname
     fornavn
