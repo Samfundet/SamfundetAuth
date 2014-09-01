@@ -76,6 +76,7 @@ namespace :samfundet_auth_engine do
           { :fornavn => "Simon",      :etternavn => "Randby",     :mail => "simon@samfundet.no"          },
           { :fornavn => "Alf",        :etternavn => "Jonassen",   :mail => "alf1337@gmail.com"           },
           { :fornavn => "Glenn",      :etternavn => "Aarøen",     :mail => "glaar90@gmail.com"           },
+          { :fornavn => "Katrine",    :etternavn => "Jordheim",   :mail => "katrine@samfundet.no"        },
       ]
 
       members.each do |member|
