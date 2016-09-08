@@ -1,12 +1,12 @@
 class Role < ActiveRecord::Base
-  validates_format_of :title, :with => /^[a-z0-9\_\-]+$/
+  validates_format_of :title, :with => /\A[a-z0-9\_\-]+\z/
   validates_presence_of :name, :description
 
   attr_readonly :title
 
-  attr_accessible :title, :name, :description, :group, :role
+  #attr_accessible :title, :name, :description, :group, :role
 
-  default_scope :order => "title"
+  default_scope { order(:title) }
 
   has_many :members_roles, :dependent => :destroy
   has_many :members, :through => :members_roles
