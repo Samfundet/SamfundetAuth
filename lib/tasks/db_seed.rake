@@ -22,22 +22,20 @@ namespace :samfundet_auth_engine do
 
       Group.all.each do |group|
         tasks << Proc.new do
-          group_leader = Role.find_or_create_by_title(
-              :title => group.group_leader_role.to_s,
-              :name => "Gjengsjef",
-              :description => "Rolle for gjengsjef for #{group.name}.",
-              :group => group
-          )
+          Role.find_or_create_by(title: group.group_leader_role.to_s) do |role|
+            role.name = "Gjensjef"
+            role.description = "Rolle for gjengsjef for #{group.name}"
+            role.group = group
+          end
         end
 
         tasks << Proc.new do
-          Role.find_or_create_by_title(
-              :title => group.short_name.parameterize,
-              :name => group.name,
-              :description => "Rolle for alle medlemmer av #{group.name}.",
-              :group => group,
-              :role => Role.find_by_title(group.group_leader_role.to_s)
-          )
+          Role.find_or_create_by(title: group.short_name.parameterize) do |role|
+            role.name = group.name,
+            role.description = "Rolle for alle medlemmer av #{group.name}."
+            role.group = group
+            role.role = Role.find_by_title(group.group_leader_role.to_s)
+          end
         end
       end
 
@@ -99,7 +97,7 @@ namespace :samfundet_auth_engine do
 
       members.each do |member|
         tasks << Proc.new do
-          Member.find_by_mail(member[:mail]).roles << lim_web_role
+          Member.find_by(mail: member[:mail]).roles << lim_web_role
         end
       end
 
