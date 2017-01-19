@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 5.0.0"
   s.add_dependency "declarative_authorization"
-  s.add_dependency "foreigner"
 
   # jquery-rails is used by the dummy application
   s.add_development_dependency "jquery-rails"
