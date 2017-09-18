@@ -84,10 +84,10 @@ namespace :samfundet_auth_engine do
           { :fornavn => "Erlend",     :etternavn => "Ekern",      :mail => "erlendekern@gmail.com"       },
           { :fornavn => "Kim Isak",   :etternavn => "Olsen",      :mail => "kimisakolsen@gmail.com"      },
           { :fornavn => "Konstantin", :etternavn => "Mathisen",   :mail => "konstantin@live.no"          },
-          { :fornavn => "Tollef",     :etternavn => "Jørgensen",  :mail => "tollefj@gmail.com"          },
-          { :fornavn => "Eivind",     :etternavn => "Reime",      :mail => "evindreime@gmail.com"       },
-          { :fornavn => "Petter",     :etternavn => "Foss",       :mail => "petterfoss1@gmail.com"      },
-          { :fornavn => "Kevin", :etternavn => "Kristiansen",     :mail => "kevikris@gmail.com"          },
+          { :fornavn => "Tollef",     :etternavn => "Jørgensen",  :mail => "tollefj@gmail.com"           },
+          { :fornavn => "Eivind",     :etternavn => "Reime",      :mail => "evindreime@gmail.com"        },
+          { :fornavn => "Petter",     :etternavn => "Foss",       :mail => "petterfoss1@gmail.com"       },
+          { :fornavn => "Kevin",      :etternavn => "Kristiansen",:mail => "kevikris@gmail.com"          },
           
       ]
 
