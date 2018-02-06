@@ -50,7 +50,7 @@ class Member < ActiveRecord::Base
   private
 
   def self.authenticate_production(member_id_or_email, password)
-    silence do # Prevents passwords from showing up in the logs.
+    LoggerSilence.silence do # Prevents passwords from showing up in the logs.
       member_id = connection.select_value sanitize_sql([
                                                            "SELECT * FROM sett_lim_utvidet_medlemsinfo(?, ?)",
                                                            member_id_or_email.to_s,
