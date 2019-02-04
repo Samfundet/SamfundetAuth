@@ -61,18 +61,10 @@ declarative_authorization. The variable @current_user will then be available in 
 
 ```ruby
 class ApplicationController < ActionController::Base
-  before_filter :set_current_user_for_model_layer_access_control
-
   def current_user
     unless session[:member_id].nil?
       @current_user = Member.find session[:member_id]
     end
-  end
-
-  protected
-
-  def set_current_user_for_model_layer_access_control
-    Authorization.current_user = current_user
   end
 end
 ```
