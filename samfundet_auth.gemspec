@@ -17,8 +17,4 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 5.0.6"
-  s.add_dependency "declarative_authorization"
-
-  # jquery-rails is used by the dummy application
-  s.add_development_dependency "jquery-rails"
 end
