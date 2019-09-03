@@ -88,9 +88,9 @@ namespace :samfundet_auth_engine do
           { :fornavn => "Kevin",      :etternavn => "Kristiansen",    :mail => "kevikris@gmail.com"           },
           { :fornavn => "Eirik",      :etternavn => "Vale Aase",      :mail => "e.v.aase@gmail.com"           },
           { :fornavn => "Daria",      :etternavn => "Barjaktarevic",  :mail => "dariamidboe@gmail.com"        },
-          { :fornavn => "Sigve",      :etternavn => "Røkenes",        :email => "sigvejprokenes@hotmail.com"  },
-          { :fornavn => "Emil",       :etternavn => "Telstad",        :email => "emil.telstad@gmail.com"      },
-          { :fornavn => "Hege",       :etternavn => "Aalvik",         :email => "hege_97@live.com"            }
+          { :fornavn => "Sigve",      :etternavn => "Røkenes",        :mail => "sigvejprokenes@hotmail.com"  },
+          { :fornavn => "Emil",       :etternavn => "Telstad",        :mail => "emil.telstad@gmail.com"      },
+          { :fornavn => "Hege",       :etternavn => "Aalvik",         :mail => "hege_97@live.com"            }
           
       ]
 
