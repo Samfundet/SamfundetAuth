@@ -5,13 +5,10 @@ class Member < ActiveRecord::Base
   has_many :roles, :through => :members_roles
 
   attr_accessor :passord if %w(production staging).include? Rails.env
-
-  #attr_accessible :fornavn, :etternavn, :mail, :telefon
-
+  
   validates_presence_of :fornavn, :etternavn, :mail, :telefon
 
   if Rails.env.development?
-    #attr_accessible :passord
     validates_presence_of :passord
   end
 
@@ -26,19 +23,7 @@ class Member < ActiveRecord::Base
   def full_name
     "#{firstname} #{lastname}"
   end
-
-  # Return a members roles as an array of symbols (used by dec_auth)
-  # This returns an array of symbols representing the roles.
-  def role_symbols
-    added_roles = (roles || []).map { |r| r.title.to_sym }
-
-    [:medlem] + added_roles
-  end
-
-  def role_symbols_with_hierarchy
-    Authorization::Engine.instance.roles_with_hierarchy_for self
-  end
-
+  
   def self.authenticate(member_id_or_email, password)
     if %w(production staging).include? Rails.env
       authenticate_production member_id_or_email, password
@@ -50,7 +35,7 @@ class Member < ActiveRecord::Base
   private
 
   def self.authenticate_production(member_id_or_email, password)
-    silence do # Prevents passwords from showing up in the logs.
+    Rails.logger.silence do # Prevents passwords from showing up in the logs.
       member_id = connection.select_value sanitize_sql([
                                                            "SELECT * FROM sett_lim_utvidet_medlemsinfo(?, ?)",
                                                            member_id_or_email.to_s,
