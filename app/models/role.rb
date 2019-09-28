@@ -3,7 +3,7 @@ class Role < ActiveRecord::Base
   validates_presence_of :name, :description
 
   attr_readonly :title
-  
+
   default_scope { order(:title) }
 
   has_many :members_roles, :dependent => :destroy

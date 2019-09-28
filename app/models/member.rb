@@ -5,7 +5,7 @@ class Member < ActiveRecord::Base
   has_many :roles, :through => :members_roles
 
   attr_accessor :passord if %w(production staging).include? Rails.env
-  
+
   validates_presence_of :fornavn, :etternavn, :mail, :telefon
 
   if Rails.env.development?
@@ -23,7 +23,7 @@ class Member < ActiveRecord::Base
   def full_name
     "#{firstname} #{lastname}"
   end
-  
+
   def self.authenticate(member_id_or_email, password)
     if %w(production staging).include? Rails.env
       authenticate_production member_id_or_email, password
