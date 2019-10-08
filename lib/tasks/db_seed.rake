@@ -107,7 +107,7 @@ namespace :samfundet_auth_engine do
 
       tasks.each_with_index do |task, index|
         task.call
-        print "\b\b\b%02d\%%" % (100 * (index.to_f + 1) / tasks.length.to_f)
+        print "\b\b\b%02d%%" % (100 * (index.to_f + 1) / tasks.length.to_f)
       end
 
       print "\n"
