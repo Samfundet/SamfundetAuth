@@ -1,4 +1,4 @@
-class MembersRole < ActiveRecord::Base
+class MembersRole < ApplicationRecord
   validates_presence_of :member_id
   validates_presence_of :role_id
 

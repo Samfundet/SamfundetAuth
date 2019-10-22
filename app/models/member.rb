@@ -1,4 +1,4 @@
-class Member < ActiveRecord::Base
+class Member < ApplicationRecord
   self.primary_key = :medlem_id
 
   has_many :members_roles, :dependent => :destroy
