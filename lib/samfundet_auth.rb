@@ -1,5 +1,7 @@
-require "active_support/configurable"
-require "samfundet_auth/engine"
+# frozen_string_literal: true
+
+require 'active_support/configurable'
+require 'samfundet_auth/engine'
 
 module SamfundetAuth
   include ActiveSupport::Configurable
@@ -10,7 +12,7 @@ module SamfundetAuth
 
       database_path = "#{Rails.root}/config/database.yml"
 
-      if File.exists? database_path
+      if File.exist? database_path
         database_config = YAML.load_file database_path
 
         if config.domain_database
@@ -23,9 +25,7 @@ module SamfundetAuth
           Member.establish_connection database_config[config.member_database.to_s]
         end
 
-        if config.member_table
-          Member.table_name = config.member_table.to_s
-        end
+        Member.table_name = config.member_table.to_s if config.member_table
       end
     end
   end

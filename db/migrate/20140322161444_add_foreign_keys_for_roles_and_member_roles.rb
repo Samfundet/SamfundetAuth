@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddForeignKeysForRolesAndMemberRoles < ActiveRecord::Migration
   def up
     add_foreign_key :roles, :roles
