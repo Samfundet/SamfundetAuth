@@ -23,7 +23,7 @@ namespace :samfundet_auth_engine do
       Group.all.each do |group|
         tasks << Proc.new do
           Role.find_or_create_by(title: group.group_leader_role.to_s) do |role|
-            role.name = "Gjensjef"
+            role.name = "Gjengsjef"
             role.description = "Rolle for gjengsjef for #{group.name}"
             role.group = group
           end
@@ -88,7 +88,7 @@ namespace :samfundet_auth_engine do
           { :fornavn => "Kevin",      :etternavn => "Kristiansen",    :mail => "kevikris@gmail.com"           },
           { :fornavn => "Eirik",      :etternavn => "Vale Aase",      :mail => "e.v.aase@gmail.com"           },
           { :fornavn => "Daria",      :etternavn => "Barjaktarevic",  :mail => "dariamidboe@gmail.com"        }
-          
+
       ]
 
       members.each do |member|
