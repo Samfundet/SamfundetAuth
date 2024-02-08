@@ -11,7 +11,7 @@ module SamfundetAuth
       database_path = "#{Rails.root}/config/database.yml"
 
       if File.exist?(database_path)
-        database_config = YAML.load_file(database_path)
+        database_config = YAML.load_file(database_path, aliases: true)
 
         if config.domain_database
           [Role, MembersRole].each do |model|
