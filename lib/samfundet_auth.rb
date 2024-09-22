@@ -1,6 +1,6 @@
-require "active_support/configurable"
-require "samfundet_auth/engine"
-require_relative '../app/models/member'
+require 'active_support/configurable'
+require 'samfundet_auth/engine'
+require '../app/models/member'
 
 module SamfundetAuth
   include ActiveSupport::Configurable
@@ -11,23 +11,21 @@ module SamfundetAuth
 
       database_path = "#{Rails.root}/config/database.yml"
 
-      if File.exist?(database_path)
-        database_config = YAML.load_file(database_path, aliases: true)
+      return unless File.exist?(database_path)
 
-        if config.domain_database
-          [Role, MembersRole].each do |model|
-            model.establish_connection(database_config[config.domain_database.to_s])
-          end
-        end
+      database_config = YAML.load_file(database_path, aliases: true)
 
-        if config.member_database
-          Member.establish_connection(database_config[config.member_database.to_s])
-        end
-
-        if config.member_table
-          Member.table_name = config.member_table.to_s
+      if config.domain_database
+        [Role, MembersRole].each do |model|
+          model.establish_connection(database_config[config.domain_database.to_s])
         end
       end
+
+      Member.establish_connection(database_config[config.member_database.to_s]) if config.member_database
+
+      return unless config.member_table
+
+      Member.table_name = config.member_table.to_s
     end
   end
 end
