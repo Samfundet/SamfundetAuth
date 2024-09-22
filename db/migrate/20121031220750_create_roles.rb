@@ -1,4 +1,4 @@
-class CreateRoles < ActiveRecord::Migration
+class CreateRoles < ActiveRecord::Migration[5.2]
   def up
     create_table :roles do |t|
       t.string     :name  # The name is a generic name of that type of role. E.g. «Gjengsjef» is a name.

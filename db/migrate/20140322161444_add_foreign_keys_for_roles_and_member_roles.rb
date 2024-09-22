@@ -1,4 +1,4 @@
-class AddForeignKeysForRolesAndMemberRoles < ActiveRecord::Migration
+class AddForeignKeysForRolesAndMemberRoles < ActiveRecord::Migration[5.2]
   def up
     add_foreign_key :roles, :roles
     add_foreign_key :roles, :groups

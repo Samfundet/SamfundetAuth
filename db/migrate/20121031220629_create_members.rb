@@ -1,4 +1,4 @@
-class CreateMembers < ActiveRecord::Migration
+class CreateMembers < ActiveRecord::Migration[5.2]
   def up
     create_table :members, :primary_key => :medlem_id do |t|
       t.string :fornavn
