@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.push File.expand_path('../lib', __FILE__)
+$LOAD_PATH.push File.expand_path('lib', __dir__)
 
 # Maintain your gem's version:
 require 'samfundet_auth/version'
@@ -20,4 +20,11 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '~> 6.1.0'
   s.required_ruby_version = '~> 3.1.2'
+
+  s.add_dependency 'actioncable', '~> 6.1.7.8'
+  s.add_dependency 'actionpack', '~> 6.1.7.8'
+  s.add_dependency 'actionview', '~> 6.1.7.8'
+  s.add_dependency 'nokogiri', '~> 1.16.7'
+  s.add_dependency 'racc', '~> 1.8.1'
+  s.add_dependency 'rails-dom-testing', '~> 2.2.0'
 end
