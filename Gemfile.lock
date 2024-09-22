@@ -154,11 +154,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  date (~> 3.3, >= 3.3.4)
-  nio4r (~> 2.7, >= 2.7.3)
-  racc (~> 1.8, >= 1.8.1)
   samfundet_auth!
-  websocket-driver (~> 0.7.6)
 
 BUNDLED WITH
    2.4.22
