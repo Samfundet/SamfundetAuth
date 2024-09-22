@@ -1,4 +1,6 @@
-source "http://rubygems.org"
+# frozen_string_literal: true
+
+source 'http://rubygems.org'
 
 # Declare your gem's dependencies in samfundet_auth.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -12,3 +14,8 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+
+gem 'date', '~> 3.3', '>= 3.3.4'
+gem 'nio4r', '~> 2.7', '>= 2.7.3'
+gem 'racc', '~> 1.8', '>= 1.8.1'
+gem 'websocket-driver', '~> 0.7.6'
