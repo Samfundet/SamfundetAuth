@@ -1,5 +1,6 @@
 require "active_support/configurable"
 require "samfundet_auth/engine"
+require_relative '../app/models/member'
 
 module SamfundetAuth
   include ActiveSupport::Configurable
