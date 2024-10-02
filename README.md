@@ -1,3 +1,9 @@
+# ⚠️ Archive notice
+
+SamfundetAuth is archived as its functionality has been merged into the main [Samfundet](https://github.com/samfundet/samfundet) project.
+
+---
+
 # SamfundetAuth
 
 This project rocks and uses MIT-LICENSE.
